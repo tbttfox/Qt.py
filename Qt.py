@@ -1006,7 +1006,7 @@ def _loadUi(uifile, baseinstance=None):
 
     """
     if hasattr(baseinstance, "layout") and baseinstance.layout():
-        if not isinstance(Qt.QtWidgets.QMainWindow):
+        if not isinstance(baseinstance, Qt.QtWidgets.QMainWindow):
             message = ("QLayout: Attempting to add Layout to %s which "
                     "already has a non-empty layout")
             raise RuntimeError(message % (baseinstance))
