@@ -1005,10 +1005,11 @@ def _loadUi(uifile, baseinstance=None):
         return the newly created instance of the user interface.
 
     """
-    if hasattr(baseinstance, "layout") and baseinstance.layout():
-        if not isinstance(baseinstance, Qt.QtWidgets.QMainWindow):
-            message = ("QLayout: Attempting to add Layout to %s which "
-                    "already has a non-empty layout")
+
+    if hasattr(baseinstance, "children"):
+        if len(baseinstance.children()):
+            message = ("QLayout: Attempting to add a ui to %s which "
+                    "already has children")
             raise RuntimeError(message % (baseinstance))
 
     if hasattr(Qt, "_uic"):
