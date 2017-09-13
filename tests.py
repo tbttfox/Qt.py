@@ -205,6 +205,7 @@ def test_load_ui_mainwindow():
 
     # Install a custom Qt Message handler to silence the qWarning
     def customHandler(*args):
+        raise ValueError("CNR: {0} {1}".format(len(args), args))
         print "ARGS", args
         mode, context, msg = args
         # explicitly skip this one message
