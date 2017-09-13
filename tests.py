@@ -204,7 +204,9 @@ def test_load_ui_mainwindow():
     from Qt import QtWidgets, QtCompat, QtCore
 
     # Install a custom Qt Message handler to silence the qWarning
-    def customHandler(mode, context, msg):
+    def customHandler(*args):
+        print "ARGS", args
+        mode, context, msg = args
         # explicitly skip this one message
         if msg == 'QMainWindowLayout::count: ?':
             return
