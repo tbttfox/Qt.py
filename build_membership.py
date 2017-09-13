@@ -169,7 +169,6 @@ excluded = {
         "QJsonValue",
         "QMessageLogContext",
         "QtInfoMsg",
-        "qInstallMessageHandler",
         "QT_TRANSLATE_NOOP",
         "QT_TR_NOOP",
         "QT_TR_NOOP_UTF8",
